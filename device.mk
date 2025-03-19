@@ -25,7 +25,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Inherit from the proprietary version
-$(call inherit-product, vendor/xiaomi/sm8450-common/sm8450-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/mondrian/mondrian-vendor.mk)
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -261,6 +261,18 @@ $(foreach sku_out, $(TARGET_COPY_OUT_NFC_SKU_PERMISSIONS), \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    ApertureResMondrian \
+    FrameworksResMondrian \
+    FrameworksResMondrianGlobal \
+    NfcResMondrian \
+    SettingsProviderResMondrian \
+    SettingsProviderResMondrianCN \
+    SettingsResMondrian \
+    SystemUIResMondrian \
+    WifiResMondrian \
+    WifiResMondrianCN
+
+PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
     FrameworksResCommon \
     SettingsResCommon \
@@ -334,6 +346,15 @@ $(foreach sku, taro diwali cape ukee, \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
+
+# System properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/properties/build_CN.prop:$(TARGET_COPY_OUT_ODM)/etc/build_CN.prop \
+    $(LOCAL_PATH)/properties/build_GL.prop:$(TARGET_COPY_OUT_ODM)/etc/build_GL.prop
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/properties/build_CN.prop:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/odm/etc/build_CN.prop \
+    $(LOCAL_PATH)/properties/build_GL.prop:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/odm/etc/build_GL.prop
 
 # Telephony
 PRODUCT_PACKAGES += \
