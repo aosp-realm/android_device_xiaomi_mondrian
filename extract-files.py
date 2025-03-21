@@ -114,6 +114,12 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
         .add_needed('libhidlbase_shim.so'),
     (
+       'vendor/lib64/libcamxcommonutils.so',
+       'vendor/lib64/hw/com.qti.chi.override.so',
+       'vendor/lib64/libmialgoengine.so',
+    ): blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
+    (
         'vendor/etc/camera/mondrian_enhance_motiontuning.xml',
         'vendor/etc/camera/mondrian_motiontuning.xml',
     ): blob_fixup().regex_replace('xml=version', 'xml version'),
