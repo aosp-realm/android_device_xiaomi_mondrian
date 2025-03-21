@@ -258,33 +258,24 @@ $(foreach sku_out, $(TARGET_COPY_OUT_NFC_SKU_PERMISSIONS), \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    ApertureResMondrian \
-    FrameworksResMondrian \
-    FrameworksResMondrianGlobal \
-    NfcResMondrian \
-    SettingsProviderResMondrian \
-    SettingsProviderResMondrianCN \
-    SettingsResMondrian \
-    SystemUIResMondrian \
-    WifiResMondrian \
-    WifiResMondrianCN
+    ApertureResOverlay \
+    FrameworksResOverlay \
+    FrameworksResXiaomiOverlay \
+    FrameworksResMondrianGlobalOverlay \
+    NfcResOverlay \
+    SettingsProviderResOverlay \
+    SettingsProviderResOverlayCN \
+    SettingsProviderResXiaomiOverlay \
+    SettingsResOverlay \
+    SettingsResXiaomiOverlay \
+    SystemUIResOverlay \
+    WifiResGlobalOverlay \
+    WifiResChinaOverlay
 
 PRODUCT_PACKAGES += \
-    CarrierConfigResCommon \
-    FrameworksResCommon \
-    SettingsResCommon \
-    SystemUIResCommon \
-    TelephonyResCommon \
-    WifiResCommon
-
-PRODUCT_PACKAGES += \
-    FrameworksResTarget \
-    FrameworksResXiaomi \
-    SettingsProviderResXiaomi \
-    SettingsResXiaomi \
-    WifiResTarget \
-    WifiResTarget_cape \
-    WifiResTarget_spf
+    CarrierConfigResOverlay \
+    TelephonyResOverlay \
+    WifiResOverlay
 
 # Partitions
 PRODUCT_PACKAGES += \
